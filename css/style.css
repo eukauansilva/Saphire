@@ -1,0 +1,228 @@
+html{
+    background-color: #ecebeb;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header ul{ 
+    font-size: medium;
+    color: rgba(0, 80, 170);
+    list-style: none;
+    display: flex;
+    text-align: center;
+    gap: 20px;
+    padding: 20px 40px;
+}
+
+.cabeca{ /* título do site */
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0px auto;
+    justify-content: space-between;
+}
+
+.cabeca img{ /* logo principal do site no titulo */
+    width: 140px;
+}
+
+.principal{ /* artigo principal: A casa que você procura em um único lugar */
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 40px;
+    max-width: 1000px;
+    margin: 0px auto 38px;
+    border-radius: 18px;
+    box-shadow: 0 8px 28px rgba(0,0,0,.08);
+}
+
+.principal img{ /* imagem do artigo principal */
+    width: 350px;
+}
+
+.principal button{ /* botão do artigo principal */
+    border: 2px solid #057c72;
+    border-radius: 30px;
+    padding: 12px;
+    box-shadow: 1px 0px 15px rgba(0,0,0,.08);
+    cursor: pointer;
+}
+
+.secundaria{ /* Segundo artigo do site */
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    gap: 40px;
+    margin: 0px auto 38px;
+    padding: 20px 40px;
+    max-width: 1000px;
+    border-radius: 18px;
+    box-shadow: 0 8px 28px rgba(0,0,0,.08);
+}
+
+.secundaria button{ /* botão do segundo artigo */
+    border: 2px solid #057c72;
+    border-radius: 20px;
+    padding: 12px;
+    box-shadow: 1px 0px 15px rgba(0,0,0,.08);
+    cursor: pointer;
+}
+
+.secundaria img{ /* "imagem da parte: Reivindique a sua melhor vida conosco!" */
+    width: 350px;
+}
+
+.container{ /* engloba a área do blog */
+   display: block;
+   max-width: 1100px;
+   margin: 04px auto 60px;
+   padding: 0 16px;
+   border: #fcf;
+}
+
+.blogTitulo{ /* titulo da área do blog */
+    font-size: clamp(2rem, 1.2rem + 2vw, 3rem);
+    color: #0b4954;
+    margin: 0 0 24px;
+}
+
+.container div{ /* área do blog */
+    display: flex;
+    grid-template-columns: 320px 1fr;
+    column-gap: 20px;
+    row-gap: 2px;
+    align-items: center;
+    padding: 18px 18px;
+    margin: 2px 0 28px;
+    background-color: #f7faf9;
+    border-radius: 18px;
+    box-shadow: 0 8px 28px rgba(0,0,0,.08);
+}
+
+.container img{ /* imagens do blog */
+    width: 100%;
+    max-width: 320px;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 18px;
+    grid-column: 1;
+}
+
+.ultimo{ /* Caixa Azul de chamada para Ação: Comece agora com Saphire */
+    color: #f7faf9;
+    display: grid;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0px auto 38px;
+    column-gap: 30px;
+    padding: 60px 20px 90px;
+    justify-content: center;
+    background-color: rgba(4, 77, 110, 0.829);
+    border-radius: 28px; 
+    box-shadow: 0, 18px, 28px;
+}
+
+.ultimo button { /* botao da área de chamada para ação */
+    border: 2px solid #057c72;
+    border-radius: 28px;
+    padding: 10px 32px;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+footer{ /* rodapé */
+    color: #fcfcfc;
+    display: flex;
+    border-radius: 0px;
+    background-color: rgba(4, 77, 110, 0.829);
+    padding: 57px 27px;
+    justify-content: space-between;
+}
+
+footer a{ /* parágrafos do rodapé */
+    text-decoration: none;
+    color: #fcfcfc;
+}
+
+.coluna1{ /* Sobre Nós */
+    text-decoration: none;
+    list-style: none;
+    display: grid;
+    text-align: center;
+    gap: 1px;
+}
+
+.coluna2{ /* Empresa */
+    list-style: none;
+    display: grid;
+    text-align: center;
+    gap: 1px;
+}
+
+.coluna3{ /* Apoio */
+    list-style: none;
+    display: grid;
+    text-align: center;
+    gap: 1px;
+}
+
+.coluna4{ /*juridico */
+    list-style: none;
+    display: grid;
+    text-align: center;
+    gap: 1px;
+}
+
+.picture{
+
+}
+
+@media only screen and (max-width: 800px) { /*adaptação a outras telas */
+  body {
+    background-color: #fcfcfc; /* cor definida ao chegar aos 600px */
+    grid-area: 1 / span 6; /* a parte direita do site, quando diminui a tela, fica sobrando. Dúvido que seja o plugin de VLibras */
+  }
+  img{
+    grid-area: 1 / span 6;
+  }
+  p{
+    grid-area: 3 / span 6;
+  }
+  button{
+    grid-area: 4 / span 6;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Mostra um contorno claro usando (TAB) */
+:where( /*quando*/
+  a, button, [role="button"],
+  input, textarea, select,
+  summary, /*tags de botoes e links que há no HTML */
+  [tabindex]:not([tabindex="-1"])
+):focus-visible { /*aqui configura o contorno ao teclar TAB */
+  outline: 3px solid #0b4954; /* cor do contorno */
+  outline-offset: 3px;  /* espaço entre texto e o contorno */
+  border-radius: 6px; /* cantinhos suaves; */
+}
+
+/* Para o contorno ficar mais alinhado ao texto */
+a:focus-visible {
+  outline-offset: 2px;
+}
